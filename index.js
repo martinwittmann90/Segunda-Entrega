@@ -111,28 +111,6 @@ function constructor()
         difgolaus.innerText = parseInt(golesaus.innerText) - parseInt(golesconaus.innerText)
         difgoldin.innerText = parseInt(golesdin.innerText) - parseInt(golescondin.innerText)
         difgoltun.innerText = parseInt(golestun.innerText) - parseInt(golescontun.innerText)   
-
-        localStorage.setItem('bienvenida', '¡Hola!');
-        localStorage.setItem('esValido', true);
-        localStorage.setItem('unNumero', 20);
-        let mensaje =  localStorage.getItem('bienvenida');
-        let bandera =  localStorage.getItem('esValido');
-        let numero  =  localStorage.getItem('unNumero');
-        
-        console.log(mensaje); // ‘¡Hola Coder!’
-        console.log(bandera); // ‘true’
-        console.log(numero);  // ‘20’
-        
-        
-        
-          let boton = document.getElementById("btn");
-          boton.addEventListener("click", () => {
-            localStorage.clear();
-            alert("Carrito eliminado");
-          })
-          
-
-
 parseInt('') === 0 
   });} 
 
@@ -142,10 +120,60 @@ parseInt('') === 0
     localStorage.password = document.getElementById("password").value;
 }
 
-function recuperarDatos() {
-    if ((localStorage.nombre != undefined) && (localStorage.password != undefined)) {
-        document.getElementById("datos").innerHTML = "Nombre: " + localStorage.nombre + " Password: " + localStorage.password;
-    } else {
-        document.getElementById("datos").innerHTML = "No has introducido tu nombre y tu password";
-    }
-}
+// create needed constants
+const rememberMe = document.querySelector(".remember");
+const forgetMe = document.querySelector(".forget");
+const form = document.querySelector("form");
+const getName = document.querySelector("#entername");
+const submitBtn = document.querySelector("#submitname");
+const forgetBtn = document.querySelector("#forgetname");
+
+const h1 = document.querySelector("h1");
+const greeting = document.querySelector(".personal-greeting");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+});
+
+submitBtn.addEventListener("click", function () {
+  localStorage.setItem("name", getName.value);
+  nameDisplayCheck();
+});
+
+forgetBtn.addEventListener("click", function () {
+  localStorage.removeItem("name");
+  nameDisplayCheck();
+});
+
+function nameDisplayCheck() {
+  if (localStorage.getItem("name")) {
+    let name = localStorage.getItem("name");
+    h1.textContent = `Bienvenido ${name}!`
+    forgetMe.style.display = "block";
+    rememberMe.style.display = "none";
+  } else {
+    h1.textContent = `Simulador del mundial`;
+    greeting.textContent = `Comenza a jugar`;
+    forgetMe.style.display = "none";
+    rememberMe.style.display = "block";}}
+document.body.onload = nameDisplayCheck;
+
+
+/* localStorage.setItem('bienvenida', '¡Hola!');
+localStorage.setItem('esValido', true);
+localStorage.setItem('unNumero', 20);
+let mensaje =  localStorage.getItem('bienvenida');
+let bandera =  localStorage.getItem('esValido');
+let numero  =  localStorage.getItem('unNumero');
+
+console.log(mensaje); // ‘¡Hola Coder!’
+console.log(bandera); // ‘true’
+console.log(numero);  // ‘20’
+
+
+
+  let boton = document.getElementById("btn");
+  boton.addEventListener("click", () => {
+    localStorage.clear();
+    alert("Carrito eliminado");
+  }) */

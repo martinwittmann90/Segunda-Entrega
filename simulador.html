@@ -65,16 +65,18 @@
     </section>
     </header>
 <main id="contenido">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" />
-    
-    <label for="nombre">Contraseña:</label>
-    <input type="text" id="password" />
-    
-    <input type="button" onclick="guardarDatos()" value="Guardar datos" />
-     
-    <p id="datos">Pulsa para ver tu nombre y tu password.</p>
-    <input type="button" onclick="recuperarDatos()" value="Recuperar datos" />
+    <h1>Simulador del mundial</h1>
+    <form>
+      <div class="remember">
+        <label for="entername">Ingresa tu nombre:</label>
+        <input id="entername" type="text" required />
+        <input id="submitname" type="submit" value="Ingresar" />
+      </div>
+      <div class="forget">
+        <label for="forgetname"></label>
+        <input id="forgetname" type="reset" value="Cambiar usuario" />
+      </div>
+    </form>
     <!-- GRUPO A -->
     <h2>GRUPO A</h2>
     <div id="grupoA">
