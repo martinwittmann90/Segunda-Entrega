@@ -144,22 +144,17 @@ parseInt('') === 0
   });}
 
 let database = 'valores_de_input'
-
 const getData = async () => {
   const res = await localStorage[database] ? JSON.parse(localStorage[database]) : []
   return res
 }
-
 const setData = (data) => {
   localStorage[database] = JSON.stringify(data)
 }
-
 const usuarioSim = "usuarioSimulador";
 const url = location.href;
 let form = document.querySelector(`#${usuarioSim}`);
-
 const resultadoSimulador = [];
-
 const nombreUsuario = document.getElementById("entername");
 const local1 = document.getElementById("equipoLocal1");
 const visitante1 = document.getElementById("equipoVisitante1");
@@ -176,7 +171,6 @@ const visitante6 = document.getElementById("equipoVisitante6");
 
 const obtenerDatos = async () => {
   const datos = await getData()
-
   /* nombreUsuario.value = datos[0].nombre */
   local1.value = datos[0].qatarUno
   visitante1.value = datos[0].ecuadorUno
@@ -189,8 +183,7 @@ const obtenerDatos = async () => {
   local5.value = datos[0].ecuadorTres
   visitante5.value = datos[0].senegalTres
   local6.value = datos[0].paisesBajosTres
-  visitante6.value = datos[0].qatarTres
-}
+  visitante6.value = datos[0].qatarTres}
 
 let precioCurso = "";
 let precioCuotas = parseInt("");
@@ -216,74 +209,16 @@ const save = () => {
   };
   datosFormulario.push(DatosFinales);
   setData(datosFormulario)
-
   Swal.fire({
     position: 'top-end',
     icon: 'success',
     title: '¡Tu predicción ha sido guardada!',
     showConfirmButton: false,
     timer: 1500
-  })
-}
-
+  })}
 btnguardo.addEventListener("click", (e) => {
   e.preventDefault();
   save()
-});
-
-btnenvio.addEventListener('click', (event) => {
-  event.preventDefault();
-
-  save()
-
-  let params = {
-    user_id: 'SAaxbiXrUyQfe-Br7',
-    service_id: 'service_ot5g91i',
-    template_id: 'template_szd70mr',
-    template_params: {
-    to_nombre: nombreUsuario.value,
-    to_qatarUno: equipoLocal1.value,
-    to_ecuadorUno: equipoLocal2.value,
-    to_senegalUno: equipoVisitante2.value,
-    to_paisesBajosUno: equipoLocal3.value,
-    to_qatarDos: equipoVisitante3.value,
-    to_senegalDos: equipoVisitante3.value,
-    to_paisesBajosDos: equipoLocal4.value,
-    to_ecuadorDos: equipoVisitante4.value,
-    to_ecuadorTres: equipoLocal5.value,
-    to_senegalTres: equipoVisitante5.value,
-    to_paisesBajosTres: equipoLocal6.value,
-    to_qatarTres: equipoVisitante6.value,
-    }
-  };
-
-  let headers = {
-    'Content-type': 'application/json'
-  };
-
-  let options = {
-    method: 'POST',
-    headers: headers,
-    body: JSON.stringify(params)
-  };
-  fetch('https://api.emailjs.com/api/v1.0/email/send', options)
-    .then((httpResponse) => {
-      if (httpResponse.ok) {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: '¡Sus datos han sido enviados!',
-          showConfirmButton: false,
-          timer: 1500
-        })
-      } else {
-        return httpResponse.text()
-          .then(text => Promise.reject(text));
-      }
-    })
-    .catch((error) => {
-      console.log('Oops... ' + error);
-    });
 });
 obtenerDatos()
 
