@@ -1,0 +1,12 @@
+@mixin estilofoto {
+    padding: 10px;
+    overflow:hidden;
+}
+
+@mixin estilofoto2 {
+    width: 100%;
+	height: 100%;
+	object-fit:scale-down;
+	justify-content: center;
+	border-radius: 12px;
+}

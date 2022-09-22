@@ -1,0 +1,240 @@
+@import 'base/tipografias';
+@import 'utilities/listas';
+@import 'utilities/mixin';
+@import 'utilities/extends';
+@import 'components/botones';
+@import 'layout/headermobiles';
+@import 'layout/footer';
+@import 'layout/grid';
+@import 'layout/banner';
+/* RESET ESTILOS */
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;}
+/*HEADER*/
+header {
+    section {
+        nav {
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 0.2rem;}}}}
+#cabecera__mobile{
+        nav {
+            .navbar {
+                .container {
+                    width: 100%;}}}}
+header {
+    section {
+        nav {
+            .navbar {
+                .nav-container {
+                    display: block;
+                    position: relative;
+                    height: 0px;
+                    .menu-items {
+                        display: flex;}}}}}}
+header {
+    section {
+        nav {
+            .navbar {
+                div {
+                    .menu-items {
+                        li {
+                            margin-bottom: 1.2rem;
+                            font-size: 1.5rem;
+                            font-weight: 500;
+                        }}}}}}}
+header {
+    section {
+        nav {
+            .navbar {
+                .nav-container {
+                    li{
+                        list-style: none;
+                        a{
+                            text-decoration: none;
+                            color:#F5F5F5;
+                            font-weight: 500;
+                            font-size: 1.2rem;
+                            padding: 0.7rem;
+                            &:hover {
+                                font-weight: bolder;}}}}}}}}
+header {
+    section {
+        nav {
+            .navbar {
+                .nav-container {
+                    .hamburger-lines {
+                        display: block;
+                        height: 26px;
+                        width: 32px;
+                        position: relative;
+                        padding: 2rem;
+                        z-index: 4;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        span {
+                            display: block;
+                            height: 4px;
+                            width: 100%;
+                            border-radius: 10px;
+                            background: #0e2431;}}}}}}}
+.navbar .menu-items {
+        padding-top: 60px;
+        height: 80vh;
+        width: 100%;
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        transition: transform 0.5s ease-in-out;
+        text-align: left;
+        background-color: #7585E2;
+        z-index: 3;}
+.nav-container .checkbox {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 32px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;}
+header {@extend %efectoshamburguesa;}
+#cabecera__mobile{
+    @media only screen and (min-width: 701px) {
+        display:none
+    }}
+/*FIN HEADER CELULAR*/
+/*INICIO HEADER DESKTOP*/
+#cabecera__desktop {
+    font-size: nth($tamaño-fuente,2);
+    border-bottom: 7px solid nth($colores,2);
+    background-color: nth($colores,5);
+    padding: 30px 0px;
+    div {
+        background-color: nth($colores,5);
+        nav {
+            ul {
+                @extend %centralizador3;
+                li {
+                    a {
+                        color:nth($colores-fuente, 2);
+                        font-family: nth($fuentes, 2);
+                        font-size: nth($tamaño-fuente,3);
+                        &:hover {
+                            color:nth($colores-fuente, 1);
+                            transition: color 1s cubic-bezier(0.33, 1, 0.68, 1);
+                            animation: heartBeat;
+                            animation-duration: 5s; }}}}}}
+    @media only screen and (min-device-width : 320px) and (max-device-width : 700px) {
+            display: none;}}
+/*FIN HEADER DESKTOP*/
+
+    .partidos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 2px;
+}
+.primerafecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    columns: 1;
+    border: red solid 2px;
+}
+.segundafecha {
+    columns: 2;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    border: red solid 2px;
+}
+.tercerafecha {
+    columns: 3;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    border: red solid 2px;
+}
+.primerPartido {
+    display: flex;
+    flex-direction: row; 
+    font-size: 12px;
+    
+}
+.segundoPartido {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+.tercerPartido {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+.cuartoPartido {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+.quintoPartido {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+.sextoPartido {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    
+}
+.izquierdo {
+    display: flex;
+    text-align: center;
+    padding: 2px;
+}
+.derecho {
+    display: flex;
+    text-align: center;
+    padding: 2px;
+}
+.tabla {
+    border: 5px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    display: grid;
+    align-items: center;
+    align-content: center;
+}
+.tablaPosiciones {
+    border: 5px solid red;
+    padding: 20px;
+    font-size: 20px;
+    margin: 20px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    border-spacing: 25px 10px;
+    
+}
+.desaparecer {
+    display: none;
+}
