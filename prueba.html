@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="alert"></div>
+
+    <form id="formInscripcion">
+      <h3>Formulario de inscripción</h3>
+  
+      <label for="nombreCompleto">Nombre completo</label>
+      <input type="text" name="full-name" id="nombreCompleto" />
+  
+      <label for="fechaNacimiento">Fecha de nacimiento</label>
+      <input type="date" name="dob" id="fechaNacimiento" />
+  
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
+  
+      <label for="telefono">Teléfono</label>
+      <input type="tel" name="phone" id="telefono" maxlength="11" />
+  
+      <label for="curso">Curso</label>
+      <select name="cursos" id="curso" tabindex="0">
+        <option value="">Seleccione un curso</option>
+        <option value="OperadorOffice">Operador de Office</option>
+        <option value="Programacion">Programación</option>
+        <option value="DisenioGrafico">Diseño Gráfico</option>
+      </select>
+  
+      <label for="cuotas">Cuotas</label>
+      <select name="cuotas" id="cuotas" tabindex="0">
+        <option value="">Seleccione las cuotas</option>
+        <option value="tres" name="3">3</option>
+        <option value="cinco" name="5">5</option>
+        <option value="doce" name="12">12</option>
+      </select>
+  
+      <label for="paises">País</label>
+      <select name="paises" id="paises" tabindex="0">
+        <option value="">Seleccione un país</option>
+        <option value="uruguay" name="Uruguay">Uruguay</option>
+        <option value="argentina" name="Argentina">Argentina</option>
+        <option value="chile" name="Chile">Chile</option>
+      </select>
+      <br><br>
+  
+      <button type="submit" id="enviar">Enviar</button>
+      <button type="submit" id="guardar">Guardar</button>
+    </form>
+  
+    <!-- 1 error falta importar el archivo -->
+    <script src="index.js"></script>
+    <!-- 2 error falta importar sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>
