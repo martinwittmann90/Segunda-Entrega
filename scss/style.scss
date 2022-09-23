@@ -3,128 +3,28 @@
 @import 'utilities/mixin';
 @import 'utilities/extends';
 @import 'components/botones';
-@import 'layout/headermobiles';
+@import 'layout/header';
 @import 'layout/footer';
 @import 'layout/grid';
 @import 'layout/banner';
-/* RESET ESTILOS */
 * {
     padding: 0;
     margin: 0;
     list-style: none;
     text-decoration: none;
     border: none;}
+
 /*HEADER*/
-header {
-    section {
-        nav {
-            div {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                padding: 0.2rem;}}}}
-#cabecera__mobile{
-        nav {
-            .navbar {
-                .container {
-                    width: 100%;}}}}
-header {
-    section {
-        nav {
-            .navbar {
-                .nav-container {
-                    display: block;
-                    position: relative;
-                    height: 0px;
-                    .menu-items {
-                        display: flex;}}}}}}
-header {
-    section {
-        nav {
-            .navbar {
-                div {
-                    .menu-items {
-                        li {
-                            margin-bottom: 1.2rem;
-                            font-size: 1.5rem;
-                            font-weight: 500;
-                        }}}}}}}
-header {
-    section {
-        nav {
-            .navbar {
-                .nav-container {
-                    li{
-                        list-style: none;
-                        a{
-                            text-decoration: none;
-                            color:#F5F5F5;
-                            font-weight: 500;
-                            font-size: 1.2rem;
-                            padding: 0.7rem;
-                            &:hover {
-                                font-weight: bolder;}}}}}}}}
-header {
-    section {
-        nav {
-            .navbar {
-                .nav-container {
-                    .hamburger-lines {
-                        display: block;
-                        height: 26px;
-                        width: 32px;
-                        position: relative;
-                        padding: 2rem;
-                        z-index: 4;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        span {
-                            display: block;
-                            height: 4px;
-                            width: 100%;
-                            border-radius: 10px;
-                            background: #0e2431;}}}}}}}
-.navbar .menu-items {
-        padding-top: 60px;
-        height: 80vh;
-        width: 100%;
-        transform: translate(-150%);
-        display: flex;
-        flex-direction: column;
-        margin: 0px;
-        padding: 0px;
-        transition: transform 0.5s ease-in-out;
-        text-align: left;
-        background-color: #7585E2;
-        z-index: 3;}
-.nav-container .checkbox {
-        position: absolute;
-        display: block;
-        height: 32px;
-        width: 32px;
-        top: 20px;
-        left: 20px;
-        z-index: 5;
-        opacity: 0;
-        cursor: pointer;}
-header {@extend %efectoshamburguesa;}
-#cabecera__mobile{
-    @media only screen and (min-width: 701px) {
-        display:none
-    }}
-/*FIN HEADER CELULAR*/
-/*INICIO HEADER DESKTOP*/
-#cabecera__desktop {
+#cabecera {
     font-size: nth($tamaño-fuente,2);
     border-bottom: 7px solid nth($colores,2);
     background-color: nth($colores,5);
-    padding: 30px 0px;
+    padding: 4vh 0px;
     div {
         background-color: nth($colores,5);
         nav {
             ul {
-                @extend %centralizador3;
+                @extend %centralizador1;
                 li {
                     a {
                         color:nth($colores-fuente, 2);
@@ -135,9 +35,506 @@ header {@extend %efectoshamburguesa;}
                             transition: color 1s cubic-bezier(0.33, 1, 0.68, 1);
                             animation: heartBeat;
                             animation-duration: 5s; }}}}}}
-    @media only screen and (min-device-width : 320px) and (max-device-width : 700px) {
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
             display: none;}}
-/*FIN HEADER DESKTOP*/
+
+/* HEADER PARA DESKTOP */
+@media only screen and (min-width : 481px) {
+#hamburguesa {
+	display: none;}}
+header {
+    @extend %hamburguesa;}
+
+/*MAIN*/
+
+/*PRESENTACION SITIO WEB*/
+.presentacion{
+    background-color: nth($colores,7);
+    padding: 5vh 2vw;
+        div{ 
+            padding: 10px;
+            @extend %centralizador2;
+            flex-direction: column; 
+            h1, h2 {
+                padding: 15px;
+                color:nth($colores-fuente,1);
+                font-family: nth($fuentes,2);}}}
+
+/*BANNER GIRATORIO*/
+    .banner {
+        background: nth($colores, 4);
+        height: 50px;
+        div {
+            white-space: nowrap;
+            padding: 5px 0 5px 0;
+            font-size: nth($tamaño-fuente,3);
+            font-weight: 500;
+            color: nth($colores-fuente, 6);
+            overflow: hidden;
+            position: relative;
+            div{
+                animation: rolltext 30s linear infinite both;
+                color: nth($colores-fuente, 6);
+                margin: 0;
+                white-space: nowrap;
+                display: inline-flex;
+                overflow: visible;
+                a {
+                    text-decoration: none;
+                    color: nth($colores-fuente, 1);
+                    font-size: nth($tamaño-fuente,3);
+                    font-family: nth($fuentes,1);
+                    @extend %banner1;}}}
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+                            height: 40px;
+                            div {
+                                padding: 5px;
+                                font-size: nth($tamaño-fuente,1);
+                                div{
+                                    a {
+                                        font-size: nth($tamaño-fuente,3);}}}}}
+/*MUESTRA IMAGENES HOME*/
+section {
+    div {
+        div {
+            div {
+                img {
+                    max-width: 100%;
+                    padding: 10px;}}}}}
+.img__brat1 {
+    background-color: nth($colores,8);
+    position: relative;
+    text-align: center;
+    color: nth($colores-fuente, 4);
+    display: flex;
+    @extend %centralizador4;
+    font-family: nth($fuentes,1);
+}
+.texto__brat__1 {
+    position: absolute;
+    padding: 90px 0 20px 50px;
+    font-size: nth($tamaño-fuente,2);
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        padding: 4rem 3rem 0 2rem;}}
+.texto__brat__2 {
+    position: absolute;
+    padding: 9.375rem 3.125rem 0 3.125rem;
+    font-size: nth($tamaño-fuente,4);
+    display: flex;
+    @extend %centralizador2;
+    text-align: left;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        padding: 6rem 3rem 0 2rem;}
+}
+.img__kiwi2 {
+    position: relative;
+    text-align: center;
+    color: nth($colores-fuente, 3);
+    display: flex;
+    @extend %centralizador4;
+    font-family: nth($fuentes,2);
+    background-color: nth($colores,3);}
+.texto__kiwi__1 {
+    position: absolute;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-top: 60px;
+    font-size: nth($tamaño-fuente,2);
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        padding: 4rem 3rem 0 2rem;}}
+.texto__kiwi__2 {
+    position: absolute;
+    padding: 150px 200px 0 50px;
+    font-size: nth($tamaño-fuente,5);
+    display: flex;
+    @extend %centralizador1;
+    text-align: left;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        padding: 6rem 3rem 0 2rem;
+        font-size: nth($tamaño-fuente,4);}}
+.img__brat2 {
+    background-color: nth($colores,1);
+    @extend %centralizador1;}
+.img__kiwi1 {
+    background-color: nth($colores,9);
+    @extend %centralizador1;}
+
+/*LOGO ROTATORIO*/
+.trabajaconnosotros {
+    div {
+        .rosca {
+            animation-name: girar;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+            animation-timing-function:linear;}
+@keyframes girar {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);}}}}
+
+/*SECCION TRABAJA CON NOSOTROS*/
+.trabajaconnosotros {
+    background-color:nth($colores,5);
+    padding: 2rem;
+    @extend %centralizador2;
+    div {
+        padding: 20px;
+        h2 {
+            color:nth($colores-fuente,1);
+            font-size: nth($tamaño-fuente,5);}}
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+                div {
+                    h2 {
+                        font-size: 2.5rem;}}}}
+.trabajaconnosotros {
+    div {
+        a {
+            @extend %boton;}}}
+
+/*FOOTER */
+footer {
+    background-color:nth($colores,2);
+    padding: 50px;    
+        div {         
+            div{
+                div{
+                    
+                    p {                      
+                        color:nth($colores-fuente,3);
+                        font-family: nth($fuentes,2);
+                        text-align: center;}}}}}
+footer {
+    div {
+        div {
+            div {
+                h3 {
+                    color:nth($colores-fuente,3);
+                    font-family: nth($fuentes,2);}}}}}
+footer {
+    div {
+        div {
+            div {
+                ul {
+                    li {      
+                        a {
+                            text-decoration: none;
+                            color:nth($colores-fuente,3);
+                            font-family: nth($fuentes,2);}}}}}}}
+
+/* FOOTER PARA CELULAR */
+footer {
+    @extend %footer;}
+/*PAGINA TRABAJOS*/
+.cuerpotrabajos {
+    background-color: nth($colores,7);}
+.cuerpoimagenes {
+	margin-top: 16vh;
+	padding: 3vh 3vw;}
+.wrapper {
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 0px;}
+#one {
+	grid-column: 1;
+	grid-row: 1;
+    border: solid #7585E2 1px;}
+#two {
+	grid-column:2;
+	grid-row: 1;
+    border: solid #7585E2 1px;}
+#three {
+	grid-column: 3;
+	grid-row: 1;
+    border: solid #7585E2 1px;}
+#four {
+	grid-column: 1;
+	grid-row: 2;
+    border: solid #7585E2 1px;}
+#five {
+	grid-column: 2;
+	grid-row: 2;
+    border: solid #7585E2 1px;}
+#six {
+	grid-column: 3;
+	grid-row: 2;
+    border: solid #7585E2 1px;}
+.caption__empresa {
+    color:nth($colores-fuente,1);
+    text-align: left;
+    font-family: nth($fuentes,2);
+    font-size: nth($tamaño-fuente,7);
+    padding: 0 0 0.5rem 2.5rem;}
+.caption__descripcion {
+    color:nth($colores-fuente,1);
+    text-align: left;
+    font-family: nth($fuentes,2);
+    font-size: nth($tamaño-fuente,2);
+    padding: 0 0 1rem 2.5rem;}
+.caption__referencia {
+    color:nth($colores-fuente,1);
+    text-align: left;
+    font-family: nth($fuentes,2);
+    font-size: nth($tamaño-fuente,3);
+    padding: 0 0 0rem 2.5rem;}
+main {
+    section {
+        div {
+            div {
+                img {
+                    padding: 1rem 2rem 0 2.5rem;}}}}}
+
+/*PAGINA TRABAJOS PARA CELULARES*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.wrapper {
+		display:block;
+		grid-gap: 10px;
+		padding: 10px;}}
+/* ZOOM IMAGENES */
+.img-hover-zoom {
+	height: 100%;
+	overflow: hidden;} 
+.img-hover-zoom--slowmo img {
+	transform-origin: 50% 65%;
+	transition: transform 5s, filter 3s ease-in-out;}
+.img-hover-zoom--slowmo:hover img {
+	transform: scale(1.1);}
+
+/*PAGINA SERVICIOS*/
+.seccion__inicial {
+    padding: 0.5rem 2rem;
+    background-color: nth($colores,2);
+        h2, h3, h4 {
+            padding: 2rem 15rem 1rem 0.5rem;
+            color: nth($colores-fuente,3);
+            text-align: left;
+            font-family: nth($fuentes,1);}
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+                h2, h3, h4 {
+                    padding: 2rem 1rem 1rem 0.5rem;
+                    text-align: left;
+            }}}
+.seccion__inicial {
+    h2 {
+        font-size: nth($tamaño-fuente,3);
+    }}
+.seccion__inicial {
+    h3 {
+        font-size: nth($tamaño-fuente,7);
+    }}
+.seccion__inicial {
+    h4 {
+        font-size: nth($tamaño-fuente,3);
+    }}
+.seccion__intermedia {
+        padding: 6rem 2rem 0 2rem;
+                background-color: nth($colores,7);
+                @extend %centralizador4;
+                h2, h3 {
+                    text-align: left;
+                    padding: 1rem 5rem 0.4rem 0.5rem;
+                    color: nth($colores-fuente,1);
+                    font-family: nth($fuentes,1);}}
+.seccion__intermedia {
+                h2 {
+                    font-size: nth($tamaño-fuente,4);}}
+.seccion__intermedia {
+                h3 {
+                    font-size: nth($tamaño-fuente,3);}}
+.seccion__final {
+        padding: 4rem 0.5rem;
+        @extend %centralizador2;
+            div {
+                text-align: left;
+                a {
+                    @extend %boton;}}}
+.seccion__final {
+    div {
+        h2, h3 {
+            padding: 0.5rem 0;
+            color: nth($colores-fuente,1);
+            font-family: nth($fuentes,1);}}
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        div {
+            padding-left: 5rem;
+            h2, h3 {
+                padding-left: 3rem;}}}}
+.seccion__final {
+    div {
+        h2 {
+            font-size: nth($tamaño-fuente,8);}}}
+.seccion__final {
+    div {
+        h3 {
+            font-size: nth($tamaño-fuente,3);
+            padding-bottom: 2rem}}}
+
+/*PAGINA ABOUT*/
+#acerca {
+    .presentacion {
+        .presentacion__contenedor {
+            @extend %centralizador5;}}}
+#acerca {
+    .presentacion {
+        .presentacion__contenedor {
+            img {
+                padding: 0 3rem;}}}}
+.estrella__1 {
+    display: flex;
+    align-self:flex-start;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        display: none;}}
+.estrella__2 {
+    display: flex;
+    align-self: flex-end;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        display: none;}}
+.presentacion__contenedor__texto {
+    h2 {
+        padding: 2rem 0 1rem 0.5rem;
+        color: nth($colores-fuente,1);
+        font-family: nth($fuentes,4);
+        font-size: nth($tamaño-fuente,8); }
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        h2 {
+            font-size: 2rem;
+            text-align: left;}}}
+.presentacion__contenedor__texto {
+    h3 {
+        padding: 2rem 0 1rem 0.5rem;
+        color: nth($colores-fuente,1);
+        font-family: nth($fuentes,4);
+        font-size: nth($tamaño-fuente,7);}
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+            h3 {
+                font-size: 1rem;
+                text-align: left;
+                padding-right: 2rem;}}}
+.nosotras {
+    color: #7585E2;
+    padding: 0 0 3rem 3rem;}
+.presentaciondiseñadoras {
+    margin: 5rem 1rem;}
+#presentaciondani {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    div {
+        margin: 10px;
+        h2 {
+            color: #7585E2;
+            padding-left: 15px;}}
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        display: flex;
+        flex-direction:column-reverse;}}
+#presentaciondani {
+    div {
+        p {
+            color: #7585E2;
+            padding: 20px;}}
+        }
+#presentacionpepa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    div {
+        margin: 10px;
+        h2 {
+            color: #7585E2;
+            padding-left: 15px;}}
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        display: flex;
+        flex-direction:column;}}
+#presentacionpepa {
+    div {
+        p {
+            color: #7585E2;
+            padding: 20px;}}}
+
+/*PAGINA CONTACTO*/
+.mainformulario {
+    background-color: nth($colores,3);}
+.titulocontacto {
+    margin-top: 10vh;
+    div {
+        h2 {
+            @extend %centralizador1;
+            font-family: nth($fuentes,2);
+            color: nth($colores,2);}}}
+.titulocontacto {
+    div {
+        h3 {
+            @extend %centralizador1;
+            font-family: nth($fuentes,2);
+            color: nth($colores,2);}}}
+.formulario {
+    width: 340px;
+    height: 440px;
+    background-color: nth($colores,5);
+    border-radius: 15px;
+    box-shadow: 0 0 40px 10px nth($colores,2);
+    margin: calc(50vh - 220px) auto;
+    padding: 20px 30px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    font-family: nth($fuentes,2);
+    position: relative;
+    h2 {
+        margin: 10px 0;
+        text-align: center;
+        padding-bottom: 10px;
+        width: 100%;
+        color:nth($colores-fuente,2);
+        border-bottom: 3px solid nth($colores,2);}}
+.formulario {
+    p {
+        &:before {
+            content: attr(type);
+            display: block;
+            margin: 28px 0 0;
+            font-size: 14px;
+            color: nth($colores,2);}}}
+.formulario {
+            p {           
+            input {
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                background: none;
+                outline: none;
+                resize: none;
+                border: 0;
+                font-family: nth($fuentes,2);
+                transition: all 0.3s;
+                border-bottom: 2px solid nth($colores,3);
+            &:focus {
+                border-bottom: 2px solid nth($colores,3);}}}}
+.formulario {
+    button {
+    @extend %boton;
+    font-family: nth($fuentes,2);
+    margin: 8px 0 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+    background-color: nth($colores,2);
+    color: nth($colores-fuente,2);}}}
+.formulario {
+    div {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: 10px;
+    background: nth($colores,2);
+    color: nth($colores-fuente,3);
+    width: 320px;
+    padding: 16px 4px 16px 0;
+    border-radius: 6px;
+    font-size: 13px;
+    span {
+        margin: 0 5px 0 15px;}}}
 
     .partidos {
     display: grid;
@@ -238,3 +635,9 @@ header {@extend %efectoshamburguesa;}
 .desaparecer {
     display: none;
 }
+
+.inputResultado {
+                padding: 2px;
+                width: 50%;
+                height: 50%;
+                }

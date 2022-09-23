@@ -1,5 +1,6 @@
 @mixin estilofoto {
-    padding: 10px;
+	padding-top: 0.2rem;
+    padding: 0.2rem;
     overflow:hidden;
 }
 
@@ -9,4 +10,5 @@
 	object-fit:scale-down;
 	justify-content: center;
 	border-radius: 12px;
+	border: solid 2px red;
 }
