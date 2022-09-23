@@ -1,3 +1,56 @@
+//RESULTADOS DEL USUARIO
+const guardarResultado1 = document.getElementById("equipoLocal1");
+const guardarResultado2 = document.getElementById("equipoVisitante1");
+const guardarResultado3 = document.getElementById("equipoLocal2");
+const guardarResultado4 = document.getElementById("equipoVisitante2");
+const guardarResultado5 = document.getElementById("equipoLocal3");
+const guardarResultado6 = document.getElementById("equipoVisitante3");
+const guardarResultado7 = document.getElementById("equipoLocal4");
+const guardarResultado8 = document.getElementById("equipoVisitante4");
+const guardarResultado9 = document.getElementById("equipoLocal5");
+const guardarResultado10 = document.getElementById("equipoVisitante5");
+const guardarResultado11 = document.getElementById("equipoLocal6");
+const guardarResultado12 = document.getElementById("equipoVisitante6");
+const guardarResultado13 = document.getElementById("equipoLocal7");
+const guardarResultado14 = document.getElementById("equipoVisitante7");
+const guardarResultado15 = document.getElementById("equipoLocal8");
+const guardarResultado16 = document.getElementById("equipoVisitante8");
+const guardarResultado17 = document.getElementById("equipoLocal9");
+const guardarResultado18 = document.getElementById("equipoVisitante9");
+const guardarResultado19 = document.getElementById("equipoLocal10");
+const guardarResultado20 = document.getElementById("equipoVisitante10");
+const guardarResultado21 = document.getElementById("equipoLocal11");
+const guardarResultado22 = document.getElementById("equipoVisitante11");
+const guardarResultado23 = document.getElementById("equipoLocal12");
+const guardarResultado24 = document.getElementById("equipoVisitante12");
+const guardarResultado25 = document.getElementById("equipoLocal13");
+const guardarResultado26 = document.getElementById("equipoVisitante13");
+const guardarResultado27 = document.getElementById("equipoLocal14");
+const guardarResultado28 = document.getElementById("equipoVisitante14");
+const guardarResultado29 = document.getElementById("equipoLocal15");
+const guardarResultado30 = document.getElementById("equipoVisitante15");
+const guardarResultado31 = document.getElementById("equipoLocal16");
+const guardarResultado32 = document.getElementById("equipoVisitante16");
+const guardarResultado33 = document.getElementById("equipoLocal17");
+const guardarResultado34 = document.getElementById("equipoVisitante17");
+const guardarResultado35 = document.getElementById("equipoLocal8");
+const guardarResultado36 = document.getElementById("equipoVisitante18"); 
+
+
+const btnResultado = document.querySelector("#enviar");
+
+btnResultado.addEventListener("click", function () {
+  localStorage.setItem("name", getName.value);
+  localStorage.setItem("Qatar 1", guardarResultado1.value)
+  localStorage.setItem("Ecuador 1", guardarResultado2.value)
+  localStorage.setItem("Senegal 1", guardarResultado3.value)
+  localStorage.setItem("Paises Bajos 1", guardarResultado4.value)
+  localStorage.setItem("Qatar 2", guardarResultado5.value)
+  localStorage.setItem("Senegal 2", guardarResultado6.value)
+  ;}
+  ); 
+
+
 const rememberMe = document.querySelector(".remember");
 const forgetMe = document.querySelector(".forget");
 const form1 = document.querySelector("form");
@@ -27,7 +80,7 @@ function nameDisplayCheck() {
     h1.textContent = `Simulador del mundial`;
     forgetMe.style.display = "none";
     rememberMe.style.display = "block";}}
-document.body.onload = nameDisplayCheck;
+document.body.onload = nameDisplayCheck; 
 
 (function(original) {
     parseInt = function() {
@@ -142,99 +195,3 @@ function constructor()
         difgoltun.innerText = parseInt(golestun.innerText) - parseInt(golescontun.innerText)
 parseInt('') === 0 
   });}
-
-let database = 'valores_de_input'
-const getData = async () => {
-  const res = await localStorage[database] ? JSON.parse(localStorage[database]) : []
-  return res
-}
-const setData = (data) => {
-  localStorage[database] = JSON.stringify(data)
-}
-const usuarioSim = "usuarioSimulador";
-const url = location.href;
-let form = document.querySelector(`#${usuarioSim}`);
-const resultadoSimulador = [];
-const nombreUsuario = document.getElementById("entername");
-const local1 = document.getElementById("equipoLocal1");
-const visitante1 = document.getElementById("equipoVisitante1");
-const local2 = document.getElementById("equipoLocal2");
-const visitante2 = document.getElementById("equipoVisitante2");
-const local3 = document.getElementById("equipoLocal3");
-const visitante3 = document.getElementById("equipoVisitante3");
-const local4 = document.getElementById("equipoLocal4");
-const visitante4 = document.getElementById("equipoVisitante4");
-const local5 = document.getElementById("equipoLocal5");
-const visitante5 = document.getElementById("equipoVisitante5");
-const local6 = document.getElementById("equipoLocal6");
-const visitante6 = document.getElementById("equipoVisitante6");
-
-const obtenerDatos = async () => {
-  const datos = await getData()
-  /* nombreUsuario.value = datos[0].nombre */
-  local1.value = datos[0].qatarUno
-  visitante1.value = datos[0].ecuadorUno
-  local2.value = datos[0].senegalUno
-  visitante2.value = datos[0].paisesBajosUno
-  local3.value = datos[0].qatarDos
-  visitante3.value = datos[0].senegalDos
-  local4.value = datos[0].paisesBajosDos
-  visitante4.value = datos[0].ecuadorDos
-  local5.value = datos[0].ecuadorTres
-  visitante5.value = datos[0].senegalTres
-  local6.value = datos[0].paisesBajosTres
-  visitante6.value = datos[0].qatarTres}
-
-let precioCurso = "";
-let precioCuotas = parseInt("");
-
-const btnguardo = document.getElementById("guardar");
-const btnenvio = document.getElementById("enviar");
-
-const save = () => {
-  const DatosFinales = {
-    nombre: nombreUsuario.value,
-    qatarUno: equipoLocal1.value,
-    ecuadorUno: equipoLocal2.value,
-    senegalUno: equipoVisitante2.value,
-    paisesBajosUno: equipoLocal3.value,
-    qatarDos: equipoVisitante3.value,
-    senegalDos: equipoVisitante3.value,
-    paisesBajosDos: equipoLocal4.value,
-    ecuadorDos: equipoVisitante4.value,
-    ecuadorTres: equipoLocal5.value,
-    senegalTres: equipoVisitante5.value,
-    paisesBajosTres: equipoLocal6.value,
-    qatarTres: equipoVisitante6.value,
-  };
-  datosFormulario.push(DatosFinales);
-  setData(datosFormulario)
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: '¡Tu predicción ha sido guardada!',
-    showConfirmButton: false,
-    timer: 1500
-  })}
-btnguardo.addEventListener("click", (e) => {
-  e.preventDefault();
-  save()
-});
-obtenerDatos()
-
-
-
-/* localStorage.setItem('bienvenida', '¡Hola!');
-localStorage.setItem('esValido', true);
-localStorage.setItem('unNumero', 20);
-let mensaje =  localStorage.getItem('bienvenida');
-let bandera =  localStorage.getItem('esValido');
-let numero  =  localStorage.getItem('unNumero');
-console.log(mensaje); // ‘¡Hola Coder!’
-console.log(bandera); // ‘true’
-console.log(numero);  // ‘20’
-  let boton = document.getElementById("btn");
-  boton.addEventListener("click", () => {
-    localStorage.clear();
-    alert("Carrito eliminado");
-  }) */
