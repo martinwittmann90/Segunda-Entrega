@@ -1,56 +1,3 @@
-//RESULTADOS DEL USUARIO
-const guardarResultado1 = document.getElementById("equipoLocal1");
-const guardarResultado2 = document.getElementById("equipoVisitante1");
-const guardarResultado3 = document.getElementById("equipoLocal2");
-const guardarResultado4 = document.getElementById("equipoVisitante2");
-const guardarResultado5 = document.getElementById("equipoLocal3");
-const guardarResultado6 = document.getElementById("equipoVisitante3");
-const guardarResultado7 = document.getElementById("equipoLocal4");
-const guardarResultado8 = document.getElementById("equipoVisitante4");
-const guardarResultado9 = document.getElementById("equipoLocal5");
-const guardarResultado10 = document.getElementById("equipoVisitante5");
-const guardarResultado11 = document.getElementById("equipoLocal6");
-const guardarResultado12 = document.getElementById("equipoVisitante6");
-const guardarResultado13 = document.getElementById("equipoLocal7");
-const guardarResultado14 = document.getElementById("equipoVisitante7");
-const guardarResultado15 = document.getElementById("equipoLocal8");
-const guardarResultado16 = document.getElementById("equipoVisitante8");
-const guardarResultado17 = document.getElementById("equipoLocal9");
-const guardarResultado18 = document.getElementById("equipoVisitante9");
-const guardarResultado19 = document.getElementById("equipoLocal10");
-const guardarResultado20 = document.getElementById("equipoVisitante10");
-const guardarResultado21 = document.getElementById("equipoLocal11");
-const guardarResultado22 = document.getElementById("equipoVisitante11");
-const guardarResultado23 = document.getElementById("equipoLocal12");
-const guardarResultado24 = document.getElementById("equipoVisitante12");
-const guardarResultado25 = document.getElementById("equipoLocal13");
-const guardarResultado26 = document.getElementById("equipoVisitante13");
-const guardarResultado27 = document.getElementById("equipoLocal14");
-const guardarResultado28 = document.getElementById("equipoVisitante14");
-const guardarResultado29 = document.getElementById("equipoLocal15");
-const guardarResultado30 = document.getElementById("equipoVisitante15");
-const guardarResultado31 = document.getElementById("equipoLocal16");
-const guardarResultado32 = document.getElementById("equipoVisitante16");
-const guardarResultado33 = document.getElementById("equipoLocal17");
-const guardarResultado34 = document.getElementById("equipoVisitante17");
-const guardarResultado35 = document.getElementById("equipoLocal8");
-const guardarResultado36 = document.getElementById("equipoVisitante18"); 
-
-
-const btnResultado = document.querySelector("#enviar");
-
-btnResultado.addEventListener("click", function () {
-  localStorage.setItem("name", getName.value);
-  localStorage.setItem("Qatar 1", guardarResultado1.value)
-  localStorage.setItem("Ecuador 1", guardarResultado2.value)
-  localStorage.setItem("Senegal 1", guardarResultado3.value)
-  localStorage.setItem("Paises Bajos 1", guardarResultado4.value)
-  localStorage.setItem("Qatar 2", guardarResultado5.value)
-  localStorage.setItem("Senegal 2", guardarResultado6.value)
-  ;}
-  ); 
-
-
 const rememberMe = document.querySelector(".remember");
 const forgetMe = document.querySelector(".forget");
 const form1 = document.querySelector("form");
@@ -193,5 +140,157 @@ function constructor()
         difgolaus.innerText = parseInt(golesaus.innerText) - parseInt(golesconaus.innerText)
         difgoldin.innerText = parseInt(golesdin.innerText) - parseInt(golescondin.innerText)
         difgoltun.innerText = parseInt(golestun.innerText) - parseInt(golescontun.innerText)
+        
 parseInt('') === 0 
-  });}
+  });} 
+
+
+//DECLARO DIFERENTES VARIABLES Y OBJETOS
+const mainId = "contenido";
+const url = location.href;
+let main = document.querySelector(`#${mainId}`);
+
+const valorDeInput = localStorage.getItem("valores_de_input");
+
+const datosFormulario = [];
+
+const nombreCompleto = document.getElementById("entername");
+//GRUPO A - FECHA 1
+const qatar1 = document.getElementById("equipoLocal1");
+const ecuador1 = document.getElementById("equipoVisitante1");
+const senegal1 = document.getElementById("equipoLocal2");
+const pbajos1 = document.getElementById("equipoVisitante2");
+//GRUPO A - FECHA 2
+const qatar2 = document.getElementById("equipoLocal3");
+const senegal2 = document.getElementById("equipoVisitante3");
+const ecuador2 = document.getElementById("equipoLocal4");
+const pbajos2 = document.getElementById("equipoVisitante4");
+//GRUPO A - FECHA 3
+const ecuador3 = document.getElementById("equipoLocal5");
+const senegal3 = document.getElementById("equipoVisitante5");
+const pbajos3 = document.getElementById("equipoLocal6");
+const qatar3 = document.getElementById("equipoVisitante6");
+//GRUPO B - FECHA 1
+const inglaterra1 = document.getElementById("equipoLocal7");
+const iran1 = document.getElementById("equipoVisitante7");
+const eeuu1 = document.getElementById("equipoLocal8");
+const gales1 = document.getElementById("equipoVisitante8");
+
+
+const btnguardo = document.getElementById("guardar");
+/* const btnenvio = document.getElementById("enviar"); */
+
+//SE CREA EL EVENTO DEL BOTÓN GUARDAR, GUARDANDO LOS DATOS EN LOCAL STORAGE
+
+btnguardo.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const DatosFinales = {
+        Nombre: nombreCompleto.value,
+        //GRUPO A - FECHA 1
+        A1Qatar: qatar1.value,
+        A1Ecuador: ecuador1.value,
+        A1Senegal: senegal1.value,
+        A1PaisesBajos: pbajos1.value,
+        //GRUPO A - FECHA 2
+        A2Qatar: qatar2.value,
+        A2Senegal: senegal2.value,
+        A2Ecuador: ecuador2.value,
+        A2PaisesBajos: pbajos2.value,
+        //GRUPO A - FECHA 3
+        A3Ecuador: ecuador3.value,
+        A3Senegal: senegal3.value,
+        A3PaisesBajos: pbajos3.value,
+        A3Qatar: qatar3.value,
+        //GRUPO A - FECHA 1
+        B1Inglaterra: inglaterra1.value,
+        B1Iran: iran1.value,
+        B1EEUU: eeuu1.value,
+        B1Gales: gales1.value,
+
+        
+    };
+
+    datosFormulario.push(DatosFinales);
+
+    localStorage.setItem("valores_de_input", JSON.stringify(datosFormulario));
+
+});
+
+/* //SE CREA EL EVENTO DEL BOTÓN ENVIAR, GUARDANDO LOS DATOS EN LOCAL STORAGE Y ENVIANDO LOS DATOS POR CORREO ELECTRONICO
+
+    btnenvio.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        if (curso.value === "opOffice") {
+            precioCurso = 20000;
+        } else if (curso.value === "prog") {
+            precioCurso = 21100;
+        } else {
+            precioCurso = 25200;
+        }
+    
+        if (cuotas.value === "tres") {
+            precioCuotas = precioCurso / 3;
+        } else if (cuotas.value === "cinco") {
+            precioCuotas = precioCurso / 5;
+        } else {
+            precioCuotas = precioCurso / 12;
+        }
+        
+    const DatosFinales = {
+        nombre: nombreCompleto.value,
+        nacimiento: fechaNacimiento.value,
+        correo: email.value,
+        telefono: telefono.value,
+        curso: curso.value,
+        precio_curso: precioCurso,
+        cuotas: cuotas.value,
+        precio_cuota: precioCuotas,
+        paises: paises.value,
+    };
+
+    datosFormulario.push(DatosFinales);
+
+    localStorage.setItem("valores_de_input", JSON.stringify(datosFormulario)); 
+
+        let params = {
+            user_id: 'SAaxbiXrUyQfe-Br7',
+            service_id: 'service_ot5g91i',
+            template_id: 'template_szd70mr',
+            template_params: {
+                to_email: email.value,
+                from_name: "Formulario",
+                to_name: nombreCompleto.value,
+                message: curso.value,
+                p_curso: precioCurso,
+                n_cuotas: cuotas.value,
+                p_cuota: precioCuotas,
+                reply_to: "formulario",
+                f_nacimiento: fechaNacimiento.value,
+                to_telefono: telefono.value,
+                to_pais: paises.value,
+                to_curso: curso.value,}};
+
+        let headers = {
+            'Content-type': 'application/json'};
+      
+        let options = {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(params)};
+        fetch('https://api.emailjs.com/api/v1.0/email/send', options)
+          .then((httpResponse) => {
+              if (httpResponse.ok) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: '¡Sus datos han sido enviados!',
+                    showConfirmButton: false,
+                    timer: 1500 })
+              } else {
+                  return httpResponse.text()
+                    .then(text => Promise.reject(text));
+              }})
+          .catch((error) => {
+              console.log('Oops... ' + error);});}); */
