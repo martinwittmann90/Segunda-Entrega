@@ -175,6 +175,46 @@ const inglaterra1 = document.getElementById("equipoLocal7");
 const iran1 = document.getElementById("equipoVisitante7");
 const eeuu1 = document.getElementById("equipoLocal8");
 const gales1 = document.getElementById("equipoVisitante8");
+//GRUPO B - FECHA 2
+const gales2 = document.getElementById("equipoLocal9");
+const iran2 = document.getElementById("equipoVisitante9");
+const eeuu2 = document.getElementById("equipoLocal10");
+const inglaterra2 = document.getElementById("equipoVisitante10");
+//GRUPO B - FECHA 3
+const gales3 = document.getElementById("equipoLocal11");
+const inglaterra3 = document.getElementById("equipoVisitante11");
+const iran3 = document.getElementById("equipoLocal12");
+const eeuu3 = document.getElementById("equipoVisitante12");
+//GRUPO C - FECHA 1
+const argentina1 = document.getElementById("equipoLocal13");
+const arabia1 = document.getElementById("equipoVisitante13");
+const mexico1 = document.getElementById("equipoLocal14");
+const polonia1 = document.getElementById("equipoVisitante14");
+//GRUPO C - FECHA 2
+const argentina2 = document.getElementById("equipoLocal13");
+const mexico2 = document.getElementById("equipoVisitante13");
+const arabia2 = document.getElementById("equipoLocal14");
+const polonia2 = document.getElementById("equipoVisitante14");
+//GRUPO C - FECHA 3
+const argentina3 = document.getElementById("equipoLocal15");
+const polonia3 = document.getElementById("equipoVisitante15");
+const mexico3 = document.getElementById("equipoLocal16");
+const arabia3 = document.getElementById("equipoVisitante16");
+//GRUPO D - FECHA 1
+const francia1 = document.getElementById("equipoLocal13");
+const australia1 = document.getElementById("equipoVisitante13");
+const dinamarca1 = document.getElementById("equipoLocal14");
+const tunez1 = document.getElementById("equipoVisitante14");
+//GRUPO D - FECHA 2
+const tunez2 = document.getElementById("equipoLocal13");
+const australia2 = document.getElementById("equipoVisitante13");
+const francia2 = document.getElementById("equipoLocal14");
+const dinamarca2 = document.getElementById("equipoVisitante14");
+//GRUPO D - FECHA 3
+const australia3 = document.getElementById("equipoLocal15");
+const dinamarca3 = document.getElementById("equipoVisitante15");
+const tunez3 = document.getElementById("equipoLocal16");
+const francia3 = document.getElementById("equipoVisitante16");
 
 
 const btnguardo = document.getElementById("guardar");
@@ -202,11 +242,53 @@ btnguardo.addEventListener("click", (e) => {
         A3Senegal: senegal3.value,
         A3PaisesBajos: pbajos3.value,
         A3Qatar: qatar3.value,
-        //GRUPO A - FECHA 1
+        //GRUPO B - FECHA 1
         B1Inglaterra: inglaterra1.value,
         B1Iran: iran1.value,
         B1EEUU: eeuu1.value,
         B1Gales: gales1.value,
+        //GRUPO B - FECHA 2
+        B2Gales: gales2.value,
+        B2Iran: iran2.value,
+        B2EEUU: eeuu2.value,
+        B2Inglaterra: inglaterra2.value,
+        //GRUPO C - FECHA 3
+        B3Gales: gales3.value,
+        B3Inglaterra: inglaterra3.value,
+        B3Iran: iran3.value,
+        B3EEUU: eeuu3.value,  
+        //GRUPO C - FECHA 1
+        C1Agentina: argentina1.value,
+        C1ArabiaSaudita: arabia1.value,
+        C1Mexico: mexico1.value,
+        C1Polonia: polonia1.value,
+        //GRUPO C - FECHA 2
+        C2Agentina: argentina2.value,
+        C2Mexico: mexico2.value,
+        C2ArabiaSaudita: arabia2.value,
+        C2Polonia: polonia2.value,
+        //GRUPO C - FECHA 3
+        B3Agentina: argentina3.value,
+        B3Polonia: polonia3.value,
+        B3Mexico: mexico3.value,
+        B3ArabiaSaudita: arabia3.value,
+        //GRUPO D - FECHA 1
+        D1Francia: francia1.value,
+        D1Australia: australia1.value,
+        D1Dinamarca: dinamarca1.value,
+        D1Tunez: tunez1.value,
+        //GRUPO D - FECHA 2
+        D2Tunez: tunez2.value,
+        D2Australia: australia2.value,
+        D2Francia: francia2.value,
+        D2Dinamarca: dinamarca2.value,
+        //GRUPO D - FECHA 3
+        D3Australia: australia3.value,
+        D3Dinamarca: dinamarca3.value,
+        D3Tunez: tunez3.value,
+        D3Francia: francia3.value,
+
+
 
         
     };
