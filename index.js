@@ -20,7 +20,7 @@ forgetBtn.addEventListener("click", function () {
 function nameDisplayCheck() {
   if (localStorage.getItem("name")) {
     let name = localStorage.getItem("name");
-    h1.textContent = `Bienvenido ${name}!`
+    h1.textContent = `¡Bienvenido/a ${name}!`
     forgetMe.style.display = "block";
     rememberMe.style.display = "none";
   } else {
