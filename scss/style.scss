@@ -48,97 +48,6 @@ header {
 /*MAIN*/
 
 /*PRESENTACION SITIO WEB*/
-.presentacion{
-    background-color: nth($colores,7);
-    padding: 5vh 2vw;
-        div{ 
-            padding: 10px;
-            @extend %centralizador2;
-            flex-direction: column; 
-            h1, h2 {
-                padding: 15px;
-                color:nth($colores-fuente,1);
-                font-family: nth($fuentes,2);}}}
-/*MUESTRA IMAGENES HOME*/
-section {
-    div {
-        div {
-            div {
-                img {
-                    max-width: 100%;
-                    padding: 10px;}}}}}
-.img__brat1 {
-    background-color: nth($colores,8);
-    position: relative;
-    text-align: center;
-    color: nth($colores-fuente, 4);
-    display: flex;
-    @extend %centralizador4;
-    font-family: nth($fuentes,1);
-}
-.texto__brat__1 {
-    position: absolute;
-    padding: 90px 0 20px 50px;
-    font-size: nth($tamaño-fuente,2);
-    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-        padding: 4rem 3rem 0 2rem;}}
-.texto__brat__2 {
-    position: absolute;
-    padding: 9.375rem 3.125rem 0 3.125rem;
-    font-size: nth($tamaño-fuente,4);
-    display: flex;
-    @extend %centralizador2;
-    text-align: left;
-    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-        padding: 6rem 3rem 0 2rem;}
-}
-.img__kiwi2 {
-    position: relative;
-    text-align: center;
-    color: nth($colores-fuente, 3);
-    display: flex;
-    @extend %centralizador4;
-    font-family: nth($fuentes,2);
-    background-color: nth($colores,3);}
-.texto__kiwi__1 {
-    position: absolute;
-    padding-bottom: 20px;
-    padding-left: 50px;
-    padding-top: 60px;
-    font-size: nth($tamaño-fuente,2);
-    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-        padding: 4rem 3rem 0 2rem;}}
-.texto__kiwi__2 {
-    position: absolute;
-    padding: 150px 200px 0 50px;
-    font-size: nth($tamaño-fuente,5);
-    display: flex;
-    @extend %centralizador1;
-    text-align: left;
-    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-        padding: 6rem 3rem 0 2rem;
-        font-size: nth($tamaño-fuente,4);}}
-.img__brat2 {
-    background-color: nth($colores,1);
-    @extend %centralizador1;}
-.img__kiwi1 {
-    background-color: nth($colores,9);
-    @extend %centralizador1;}
-
-/*LOGO ROTATORIO*/
-.trabajaconnosotros {
-    div {
-        .rosca {
-            animation-name: girar;
-            animation-duration: 7s;
-            animation-iteration-count: infinite;
-            animation-timing-function:linear;}
-@keyframes girar {
-    from {
-    transform: rotate(0deg);
-    }
-    to {
-    transform: rotate(360deg);}}}}
 
 /*PAGINA ESTADIO PARA CELULARES*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -158,12 +67,11 @@ section {
 
 /*PAGINA FIXTURE*/
 .seccion__inicial {
-    padding: 2rem;
+    padding: 1rem 2rem;
     background-color: nth($colores,2);
         h2 {
-            padding: 2rem;
+            padding: 1rem;
             color: nth($colores-fuente,3);
-            text-align: left;
             font-family: nth($fuentes,1);}
             font-size: nth($tamaño-fuente,4);
             @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -172,22 +80,13 @@ section {
                     text-align: left;
             }}}
 .seccion__intermedia {
-    padding: 2rem;
+    padding: 1rem 2rem;
     background-color: nth($colores,7);
-    @extend %centralizador4;
-    h2 {
-        text-align: left;
-        padding: 2rem;
-        color: nth($colores-fuente,1);
-        font-family: nth($fuentes,1);
-        font-size: nth($tamaño-fuente,4);}}
-.seccion__final {
-        padding: 4rem 0.5rem;
-        @extend %centralizador2;
-            div {
-                text-align: left;
-                a {
-                    @extend %boton;}}}
+        h2 {
+            padding: 1rem;
+            color: nth($colores-fuente,1);
+            font-family: nth($fuentes,1);
+            font-size: nth($tamaño-fuente,4);}}
 /*PAGINA CONTACTO*/
 .mainformulario {
     background-color: nth($colores,3);}
@@ -273,10 +172,32 @@ section {
 //FIXTURE
 .fixture {
     padding: 20px 0px 0px 0px;
-    font-family: nth($fuentes,3);
 }
 //SIMULADOR DE PARTIDOS
-    .partidos {
+
+main {
+    div {
+        div {
+            section {
+                div {
+                    div{
+                        figure{
+                            img {
+                                padding: 10px 30px;
+}}}}}}}}
+main {
+    div {
+        div {
+            section {
+                div {
+                    div{
+                        figure{
+                            figcaption {
+                                font-family: nth($fuentes,3);
+                                font-family: nth($fuentes,3);
+                                color: nth($colores-fuente,2)
+}}}}}}}}
+.partidos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     display: flex;
@@ -371,9 +292,9 @@ section {
     border-spacing: 25px 10px;}
 //INPUTS DE RESULTADOS
 .inputResultado {
-                margin: 10px 0px 0px 0px;
+                margin: 15px 0px 0px 0px;
                 padding: 2px;
-                width: 50%;
+                width: 20%;
                 height: 50%;
                 font-size: 20px;}
 .desaparecer {

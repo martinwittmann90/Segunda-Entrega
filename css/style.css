@@ -1,7 +1,7 @@
 /*4*/
 /*10*/
 /*8*/
-.titulocontacto div h3, .titulocontacto div h2, .img__kiwi1, .img__brat2, .texto__kiwi__2, #cabecera div nav ul {
+.titulocontacto div h3, .titulocontacto div h2, #cabecera div nav ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9,22 +9,7 @@
   align-content: center;
 }
 
-.seccion__final, .texto__brat__2, .presentacion div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-}
-
-.seccion__intermedia, .img__kiwi2, .img__brat1 {
-  display: flex;
-  justify-content: start;
-  align-content: flex-start;
-  text-align: justify;
-}
-
-.formulario button, .seccion__final div a {
+.formulario button {
   background-color: #C1CCF7;
   border: solid 2px #7585E2;
   border-radius: 8px;
@@ -267,119 +252,6 @@ header #hamburguesa nav .navbar .nav-container li a:hover {
 }
 /*MAIN*/
 /*PRESENTACION SITIO WEB*/
-.presentacion {
-  background-color: #C1CCF7;
-  padding: 5vh 2vw;
-}
-.presentacion div {
-  padding: 10px;
-  flex-direction: column;
-}
-.presentacion div h1, .presentacion div h2 {
-  padding: 15px;
-  color: #7585E2;
-  font-family: sans-serif;
-}
-
-/*MUESTRA IMAGENES HOME*/
-section div div div img {
-  max-width: 100%;
-  padding: 10px;
-}
-
-.img__brat1 {
-  background-color: #FCFAEF;
-  position: relative;
-  text-align: center;
-  color: #DF6828;
-  display: flex;
-  font-family: "Exo 2";
-}
-
-.texto__brat__1 {
-  position: absolute;
-  padding: 90px 0 20px 50px;
-  font-size: 0.75rem;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .texto__brat__1 {
-    padding: 4rem 3rem 0 2rem;
-  }
-}
-
-.texto__brat__2 {
-  position: absolute;
-  padding: 9.375rem 3.125rem 0 3.125rem;
-  font-size: 2rem;
-  display: flex;
-  text-align: left;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .texto__brat__2 {
-    padding: 6rem 3rem 0 2rem;
-  }
-}
-
-.img__kiwi2 {
-  position: relative;
-  text-align: center;
-  color: #FCFAEF;
-  display: flex;
-  font-family: sans-serif;
-  background-color: #264C3C;
-}
-
-.texto__kiwi__1 {
-  position: absolute;
-  padding-bottom: 20px;
-  padding-left: 50px;
-  padding-top: 60px;
-  font-size: 0.75rem;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .texto__kiwi__1 {
-    padding: 4rem 3rem 0 2rem;
-  }
-}
-
-.texto__kiwi__2 {
-  position: absolute;
-  padding: 150px 200px 0 50px;
-  font-size: 3rem;
-  display: flex;
-  text-align: left;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .texto__kiwi__2 {
-    padding: 6rem 3rem 0 2rem;
-    font-size: 2rem;
-  }
-}
-
-.img__brat2 {
-  background-color: #F95E48;
-}
-
-.img__kiwi1 {
-  background-color: #ECD5D1;
-}
-
-/*LOGO ROTATORIO*/
-.trabajaconnosotros div .rosca {
-  animation-name: girar;
-  animation-duration: 7s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-@keyframes girar {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /*PAGINA ESTADIO PARA CELULARES*/
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .wrapper {
@@ -405,14 +277,13 @@ section div div div img {
 
 /*PAGINA FIXTURE*/
 .seccion__inicial {
-  padding: 2rem;
+  padding: 1rem 2rem;
   background-color: #7585E2;
   font-size: 2rem;
 }
 .seccion__inicial h2 {
-  padding: 2rem;
+  padding: 1rem;
   color: #FCFAEF;
-  text-align: left;
   font-family: "Exo 2";
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -423,23 +294,16 @@ section div div div img {
 }
 
 .seccion__intermedia {
-  padding: 2rem;
+  padding: 1rem 2rem;
   background-color: #C1CCF7;
 }
 .seccion__intermedia h2 {
-  text-align: left;
-  padding: 2rem;
+  padding: 1rem;
   color: #7585E2;
   font-family: "Exo 2";
   font-size: 2rem;
 }
 
-.seccion__final {
-  padding: 4rem 0.5rem;
-}
-.seccion__final div {
-  text-align: left;
-}
 /*PAGINA CONTACTO*/
 .mainformulario {
   background-color: #264C3C;
@@ -533,7 +397,16 @@ section div div div img {
 
 .fixture {
   padding: 20px 0px 0px 0px;
+}
+
+main div div section div div figure img {
+  padding: 10px 30px;
+}
+
+main div div section div div figure figcaption {
   font-family: "Merriweather Sans";
+  font-family: "Merriweather Sans";
+  color: #000000;
 }
 
 .partidos {
@@ -643,9 +516,9 @@ section div div div img {
 }
 
 .inputResultado {
-  margin: 10px 0px 0px 0px;
+  margin: 15px 0px 0px 0px;
   padding: 2px;
-  width: 50%;
+  width: 20%;
   height: 50%;
   font-size: 20px;
 }
