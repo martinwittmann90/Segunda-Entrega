@@ -304,21 +304,6 @@ btnguardo.addEventListener("click", (e) => {
     btnenvio.addEventListener('click', (event) => {
         event.preventDefault();
 
-        if (curso.value === "opOffice") {
-            precioCurso = 20000;
-        } else if (curso.value === "prog") {
-            precioCurso = 21100;
-        } else {
-            precioCurso = 25200;
-        }
-    
-        if (cuotas.value === "tres") {
-            precioCuotas = precioCurso / 3;
-        } else if (cuotas.value === "cinco") {
-            precioCuotas = precioCurso / 5;
-        } else {
-            precioCuotas = precioCurso / 12;
-        }
         
     const DatosFinales = {
         nombre: nombreCompleto.value,
