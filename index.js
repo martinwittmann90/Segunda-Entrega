@@ -286,11 +286,7 @@ btnguardo.addEventListener("click", (e) => {
         D3Australia: australia3.value,
         D3Dinamarca: dinamarca3.value,
         D3Tunez: tunez3.value,
-        D3Francia: francia3.value,
-
-
-
-        
+        D3Francia: francia3.value, 
     };
 
     datosFormulario.push(DatosFinales);
@@ -299,7 +295,7 @@ btnguardo.addEventListener("click", (e) => {
 
 });
 
-/* //SE CREA EL EVENTO DEL BOTÓN ENVIAR, GUARDANDO LOS DATOS EN LOCAL STORAGE Y ENVIANDO LOS DATOS POR CORREO ELECTRONICO
+/* //EVENTO DEL BOTÓN ENVIAR
 
     btnenvio.addEventListener('click', (event) => {
         event.preventDefault();
@@ -322,9 +318,9 @@ btnguardo.addEventListener("click", (e) => {
     localStorage.setItem("valores_de_input", JSON.stringify(datosFormulario)); 
 
         let params = {
-            user_id: 'SAaxbiXrUyQfe-Br7',
-            service_id: 'service_ot5g91i',
-            template_id: 'template_szd70mr',
+            public_key: 'KGXHxfAUgsoEayl8K',
+            service_id: 'service_r0db0vd',
+            template_id: 'template_kl38lkg',
             template_params: {
                 to_email: email.value,
                 from_name: "Formulario",
