@@ -46,9 +46,7 @@ header {
     @extend %hamburguesa;}
 
 /*MAIN*/
-
 /*PRESENTACION SITIO WEB*/
-
 /*PAGINA ESTADIO PARA CELULARES*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	.wrapper {
@@ -64,7 +62,6 @@ header {
 	transition: transform 5s, filter 3s ease-in-out;}
 .img-hover-zoom--slowmo:hover img {
 	transform: scale(1.1);}
-
 /*PAGINA FIXTURE*/
 .seccion__inicial {
     padding: 1rem 2rem;
@@ -299,3 +296,13 @@ main {
                 font-size: 20px;}
 .desaparecer {
     display: none;}
+
+.btn {
+        @extend %boton;
+        font-family: nth($fuentes,2);
+        margin: 8px 0 0;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+        background-color: nth($colores,2);
+        color: nth($colores-fuente,2);}}
